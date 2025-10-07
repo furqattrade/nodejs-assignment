@@ -36,6 +36,6 @@
       "@utils/*": ["./src/utils/*", "./dist/utils/*"]
     }
   },
-  "include": ["src/**/*", "vitest.config.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "vitest.config.ts"]
 }
