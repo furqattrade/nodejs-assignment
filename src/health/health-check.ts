@@ -63,7 +63,6 @@ export class HealthCheck {
       repository,
     };
 
-  
     const hasUnhealthy =
       memory.status === HEALTH_STATUS.UNHEALTHY || repository.status === HEALTH_STATUS.UNHEALTHY;
     const hasDegraded =
