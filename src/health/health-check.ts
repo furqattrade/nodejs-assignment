@@ -63,8 +63,13 @@ export class HealthCheck {
       repository,
     };
 
-    const hasUnhealthy = Object.values(checks).some((c) => c.status === HEALTH_STATUS.UNHEALTHY);
-    const hasDegraded = Object.values(checks).some((c) => c.status === HEALTH_STATUS.DEGRADED);
+  
+    const hasUnhealthy =
+      memory.status === HEALTH_STATUS.UNHEALTHY || repository.status === HEALTH_STATUS.UNHEALTHY;
+    const hasDegraded =
+      memory.status === HEALTH_STATUS.DEGRADED ||
+      repository.status === HEALTH_STATUS.DEGRADED ||
+      externalApi.status === HEALTH_STATUS.UNHEALTHY;
 
     const result: HealthCheckResult = {
       status: hasUnhealthy

@@ -20,7 +20,7 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['**/dist', '**/coverage', '**/node_modules', '**/*.js', '**/*.mjs', '**/*.d.ts', 'vitest.config.ts'],
+    ignores: ['**/dist', '**/coverage', '**/node_modules', '**/*.js', '**/*.mjs', '**/*.d.ts', '**/vitest.config.ts'],
   },
   ...fixupConfigRules(
     compat.extends(
