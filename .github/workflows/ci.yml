@@ -111,18 +111,22 @@ jobs:
             -p 3000:3000 \
             quotes-service:latest
 
+          # Wait for server to start (give it a few seconds)
+          echo "Waiting for server to start..."
+          sleep 5
+
           # Wait for container to be healthy (max 30 seconds)
           timeout=30
           counter=0
           until [ $counter -ge $timeout ]; do
-            if docker exec test-app wget --spider -q http://localhost:3000/health; then
+            if curl -f http://localhost:3000/health/live > /dev/null 2>&1; then
               echo "Container is healthy!"
               docker logs test-app
               docker stop test-app
               exit 0
             fi
             counter=$((counter + 1))
-            sleep 1
+            sleep 2
           done
 
           echo "Container failed to become healthy"
