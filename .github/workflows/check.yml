@@ -1,0 +1,22 @@
+name: Run check
+on:
+  workflow_call:
+    inputs:
+      working-directory:
+        required: true
+        type: string
+      command:
+        required: true
+        type: string
+
+jobs:
+  check:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pnpm
+        with:
+          working-directory: ${{ inputs.working-directory }}
+          command: ${{ inputs.command }}

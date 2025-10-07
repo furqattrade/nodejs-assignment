@@ -1,0 +1,22 @@
+node_modules
+dist
+coverage
+*.log
+.env
+.env.local
+.git
+.gitignore
+.DS_Store
+README.md
+.vscode
+.idea
+*.md
+terraform
+.terraform
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+
+# pnpm
+.pnpm-store
+pnpm-debug.log*

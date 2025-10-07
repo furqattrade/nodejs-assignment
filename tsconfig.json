@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "lib": ["ES2022"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@config": ["./src/config/index", "./dist/config/index"],
+      "@config/*": ["./src/config/*", "./dist/config/*"],
+      "@constants": ["./src/constants/index", "./dist/constants/index"],
+      "@constants/*": ["./src/constants/*", "./dist/constants/*"],
+      "@app-types": ["./src/types/index", "./dist/types/index"],
+      "@app-types/*": ["./src/types/*", "./dist/types/*"],
+      "@schemas": ["./src/schemas/index", "./dist/schemas/index"],
+      "@schemas/*": ["./src/schemas/*", "./dist/schemas/*"],
+      "@services/*": ["./src/services/*", "./dist/services/*"],
+      "@repositories/*": ["./src/repositories/*", "./dist/repositories/*"],
+      "@routes/*": ["./src/routes/*", "./dist/routes/*"],
+      "@graphql/*": ["./src/graphql/*", "./dist/graphql/*"],
+      "@utils": ["./src/utils/index", "./dist/utils/index"],
+      "@utils/*": ["./src/utils/*", "./dist/utils/*"]
+    }
+  },
+  "include": ["src/**/*", "vitest.config.ts"],
+  "exclude": ["node_modules", "dist"]
+}

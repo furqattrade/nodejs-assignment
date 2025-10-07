@@ -1,0 +1,10 @@
+export const API_CONSTANTS = {
+  EXTERNAL_API_TIMEOUT: 10000,
+  REQUEST_TIMEOUT: 30000,
+} as const;
+
+export const PAGINATION_CONSTANTS = {
+  DEFAULT_LIMIT: 10,
+  MAX_LIMIT: 100,
+  MIN_LIMIT: 1,
+} as const;

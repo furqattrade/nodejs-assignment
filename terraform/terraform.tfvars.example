@@ -1,0 +1,20 @@
+# Copy this file to terraform.tfvars and update with your values
+
+project_name = "quotes-service"
+environment  = "dev"
+location     = "East US"
+app_service_sku = "B1"
+log_level    = "info"
+
+tags = {
+  ManagedBy   = "Terraform"
+  Application = "Quotes Service"
+  Environment = "dev"
+  Team        = "Engineering"
+}
+
+# Backend configuration (uncomment and configure for remote state)
+# backend_resource_group_name  = "terraform-state-rg"
+# backend_storage_account_name = "tfstateXXXXX"
+# backend_container_name       = "tfstate"
+# backend_key                  = "quotes-service-dev.tfstate"
