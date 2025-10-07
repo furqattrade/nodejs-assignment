@@ -98,10 +98,10 @@ jobs:
           HOST=0.0.0.0
           PORT=3000
           LOG_LEVEL=info
-          QUOTES_API_URL=https://api.quotable.io
+          QUOTES_API_URL=https://api.quotable.io/quotes
           ALLOWED_ORIGINS=*
           RATE_LIMIT_MAX=100
-          RATE_LIMIT_WINDOW=15 minutes
+          RATE_LIMIT_WINDOW=60000
           EOF
 
       - name: Test Docker container starts successfully
